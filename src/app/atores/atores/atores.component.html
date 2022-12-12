@@ -1,0 +1,29 @@
+<h2>Atores</h2>
+
+<button mat-flat-button color="primary" routerLink="/atores/criar">
+  Criar novo
+</button>
+
+<table mat-table [dataSource]="atorAr" class="mat-elevation-z8 table-index">
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let elemento">{{ elemento.nome }}</td>
+  </ng-container>
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let elemento">
+      <a
+        routerLink="/atores/editar/{{ elemento.id }}"
+        mat-flat-button
+        color="primary"
+      >
+        Editar
+      </a>
+      <button mat-flat-button color="warn" (click)="delete(elemento.id)">
+        Deletar
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let row; columns: colunas"></tr>
+</table>

@@ -1,0 +1,6 @@
+<h2>Editar Filme</h2>
+<app-filme-form
+  *ngIf="modelo"
+  [modelo]="modelo"
+  (onSalvarMudancas)="salvarMudancas($event)"
+></app-filme-form>

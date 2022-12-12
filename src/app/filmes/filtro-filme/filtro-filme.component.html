@@ -1,0 +1,16 @@
+<h2>Procurar Filmes</h2>
+
+<form [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input formControlName="nome" matInput />
+  </mat-form-field>
+
+  <div class="margin">
+    <button mat-flat-button color="primary" (click)="clearButton()">
+      Limpar
+    </button>
+  </div>
+</form>
+
+<app-lista-filmes [filmes]="filmesLista"></app-lista-filmes>
